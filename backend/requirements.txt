@@ -8,3 +8,12 @@ pytz==2023.3
 sqlparse==0.4.4
 typing_extensions==4.7.1
 waitress==2.1.2
+psycopg2-binary>=2.9
+django>=4.0  # (O la versión que estés usando)
+djangorestframework
+django-cors-headers
+
+
+
+
+

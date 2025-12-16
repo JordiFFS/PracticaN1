@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'DJBase.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'proyecto_db'),
+        'USER': os.environ.get('DB_USER', 'usuario_dev'),
+        'PASSWORD': os.environ.get('DB_PASS', 'password_dev'),
+        'HOST': os.environ.get('DB_HOST', 'db'), # 'db' es el nombre del servicio en docker-compose
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
