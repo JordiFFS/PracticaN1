@@ -26,7 +26,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Practica Numero 1
+        Practica Numero 1 error corregido
       </p>
     </>
   )
