@@ -8,8 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-EXPOSE 5173
-
 FROM node:18-alpine
 
 WORKDIR /app
@@ -18,7 +16,6 @@ RUN npm install -g serve
 
 COPY --from=builder /app/dist ./dist
 
-#EXPOSE 3000
+EXPOSE 3000
 
-#CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:3000"]
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["serve", "-s", "dist", "-l", "tcp://0.0.0.0:3000"]
